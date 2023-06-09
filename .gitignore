@@ -164,3 +164,4 @@ datasets
 .vscode
 train_result
 imagededup
+saved_model
