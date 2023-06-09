@@ -1,0 +1,117 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>독초 판별 결과</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://getbootstrap.com//docs/5.2/assets/img/favicons/apple-touch-icon.png"
+        sizes="180x180">
+    <link rel="icon" href="https://getbootstrap.com//docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32"
+        type="image/png">
+    <link rel="icon" href="https://getbootstrap.com//docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16"
+        type="image/png">
+    <link rel="manifest" href="https://getbootstrap.com//docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="https://getbootstrap.com//docs/5.2/assets/img/favicons/safari-pinned-tab.svg"
+        color="#712cf9">
+    <link rel="icon" href="https://getbootstrap.com//docs/5.2/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    <style>
+        .back {
+            width: 24px;
+            height: 24px;
+        }
+
+        .header-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a href="/" class="navbar-brand d-flex header-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="back">
+                        <path fillRule="evenodd"
+                            d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z"
+                            clipRule="evenodd" />
+                    </svg>
+
+                    <strong style="color: white">식물 다시 선택하기</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="mid_left">
+            <div class="box">
+                입력 이미지 :
+                <img class="actionimg" src={{ url_for('static', filename=upload_image)}} width="360" height="360">
+                [{{ file_name }}]
+                <FONT size="4">
+                        ==> 이 식물은 <!-- {{ result_pro }}% 확률로 -->
+                    {% if result_name == 'Kkochgaeodong_Y' %}
+                    "<strong style="color: rgb(255, 0, 0)">꽃개오동</strong>"
+                    입니다.
+                    <strong style="color: rgb(255, 0, 0)">독</strong>
+                    이 있으니 조심하세요
+                    {% elif result_name == 'Chamchwi_Y' %}
+                    "<strong style="color: rgb(255, 0, 0)">참취</strong>"
+                    입니다.
+                    <strong style="color: rgb(255, 0, 0)">독</strong>
+                    이 있으니 조심하세요
+                    {% elif result_name == 'Gomchwi_N' %}
+                    "<strong style="color: rgb(0, 255, 85)">곰취</strong>"
+                    입니다. 독은 없습니다
+                    {% elif result_name == 'Gaeodong_N' %}
+                    "<strong style="color: rgb(0, 255, 106)">개오동</strong>"
+                    입니다. 독은 없습니다
+                    {% endif %}
+                </FONT>
+                <br>
+                다음은 분류된 식물의 예시입니다.<br>
+                예시 이미지 :
+                <img class="actionimg" src={{ url_for('static', filename='/image/examples/' + result_name + '/' +example_image[0]) }} width="360" height="360"> --
+                <img class="actionimg" src={{ url_for('static', filename='/image/examples/' + result_name + '/' +example_image[1]) }} width="360" height="360"> --
+                <img class="actionimg" src={{ url_for('static', filename='/image/examples/' + result_name + '/' +example_image[2]) }} width="360" height="360">
+                <br>
+                
+                <!-- # 꽃개오동0 참취1 곰취2 개오동3 -->
+                <!-- 식물이름 {{ result_name }} -->
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="collapse bg-dark" id="navbarHeader">
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a href="/" class="navbar-brand d-flex header-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="back">
+                        <path fillRule="evenodd"
+                            d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z"
+                            clipRule="evenodd" />
+                    </svg>
+
+                    <strong style="color: white">식물 다시 선택하기</strong>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
