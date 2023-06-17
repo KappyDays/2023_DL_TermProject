@@ -1,0 +1,20 @@
+파일 설명
+
+[web/app.ipynb] 
+- python의 flask를 사용해서 web application을 구현
+[web/static]
+- web page에서 사용되는 image들 저장하는 폴더
+[web/templates]
+- web page의 html이 있는 폴더
+
+[cnn_duples.ipynb]
+- AI hub에서 받은 raw data중 중복되는 image 삭제하는 코드
+
+[train.ipynb]
+- model train code
+
+[train_test_split.py]
+- train set 의 이미지 중 20%를 test set 으로 분리
+
+[model_save]
+학습을 완료한 model의 checkpoint
