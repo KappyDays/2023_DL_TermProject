@@ -165,3 +165,5 @@ datasets
 train_result
 imagededup
 saved_model
+model_save
+dummy_files
