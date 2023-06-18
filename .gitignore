@@ -159,14 +159,12 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-temp
 datasets
 .vscode
-train_result
 imagededup
 model_save/train_1
-dummy_files
+# dummy_files
 remove_dupl_datas.txt
 web/static/image/uploads/*.jpg
 web/static/image/uploads/*.png
-class_count
+# class_count
