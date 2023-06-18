@@ -164,8 +164,9 @@ datasets
 .vscode
 train_result
 imagededup
-# model_save
+model_save/train_1
 dummy_files
 remove_dupl_datas.txt
 web/static/image/uploads/*.jpg
 web/static/image/uploads/*.png
+class_count
